@@ -1,3 +1,3 @@
 # My Class Notes
 
-Here is my class notes
+**Here are my class notes**
