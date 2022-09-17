@@ -1,3 +1,3 @@
 # My Class Notes
 
-**Here are my class notes**
+**Navigate through my notes section to find all of my notes**

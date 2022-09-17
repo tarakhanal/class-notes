@@ -12,7 +12,7 @@ A "first-class citizen" in a programming language is a way of saying "this is a 
 
 ### Value Type
 * Lives in Stack
-* They structs in C#
+* They are structs in C#
 * When the variable goes out of scope, it is automically removed from the stack
 ### Reference Type
 * Lives in Heap
