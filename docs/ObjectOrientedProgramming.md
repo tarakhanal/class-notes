@@ -1,6 +1,7 @@
 # Object Oriented Programming
 
 ## The idea is to marry state and behavior
+
 ```vs
 Dim myName as String
 Set myName = "Jeff"
@@ -8,22 +9,23 @@ Set myName = "Jeff"
 myName = UCase(myName)
 ```
 
-
 ```csharp
 var myName = "Jeff";
 
 myName = myName.ToUpper();
 ```
+
 ## To be an Object Oriented Language
 
 The language must support the following 3 (or 4) things:
 
 1. Encapsulation
-    - Comes from the root word "Capsule"
-    - We hide how we do things - this allows us to change it over time without impacting other code.
-    - This is how we get "abstraction" - "concept"
+   - Comes from the root word "Capsule"
+   - We hide how we do things - this allows us to change it over time without impacting other code.
+   - This is how we get "abstraction" - "concept"
 2. Polymorphism
 3. Inheritance
+   - Always prefer composition over inheritance
 4. Runtime Type Inspection (not all agree with this)
 
 :::info WHAT IS OOP BY ALAN KAY
@@ -37,12 +39,15 @@ systems in which this is possible, but I'm not aware of them. [Source](http://us
 :::
 
 ## Objects have:
+
 ### State
+
 variables that the object "owns"
 
 In .NET state is in class level variables, we use the term `Fields` for these.
 
 ### Behavior
+
 code that can be invoked that has something to do with the data (state) owned by that object.
 
 In .Net, the behavior is methods.
@@ -57,32 +62,37 @@ In .Net, the behavior is methods.
 
 Guidelines for deciding between properties and methods.
 
-1. Properties *imply* no computation.
+1. Properties _imply_ no computation.
 2. If you throw an exception on a property set or get, you are a jerk.
 3. Once a property is set, then getting that property a bazillion times in a row should always return the same value.
-    - so if I set `ah.Name = "Bob Smith"`, I should be able to read that over and over again and always get Bob Smith.
+   - so if I set `ah.Name = "Bob Smith"`, I should be able to read that over and over again and always get Bob Smith.
+
 ## Example
+
 I have an object that represents a bank account.
 
 ### State
+
 Bank Accounts have a current balance.
 
 ```csharp
-public class BankAccount 
+public class BankAccount
 {
     private decimal _currentBalance = 0;
 
 }
 ```
+
 ### Behaviors
+
 We can make a deposit, and make a withdraw, and we can retreive our balance.
 
 ```csharp
-public class BankAccount 
+public class BankAccount
 {
     private decimal _currentBalance = 0;
 
-    public void Deposit(decimal amount) 
+    public void Deposit(decimal amount)
     {
         _currentBalance += amount;
     }
@@ -98,6 +108,7 @@ public class BankAccount
     }
 }
 ```
+
 ### Varying Behavior
 
 We need to make decisions, make code work one way under some situations, and other ways for other situations.
@@ -106,7 +117,7 @@ We need to make decisions, make code work one way under some situations, and oth
 
 #### Vary Behavior by Parameters
 
-```csharp 
+```csharp
 account.Deposit(20);
 account.Deposit(100);
 ```
